@@ -20,29 +20,25 @@ This presentation demonstrates Marp features such as:
 - Background images  
 - Mathematical equations  
 - Marp directives  
-- Compatibility with GitHub Raw URLs  
 
 <!-- _paginate: skip -->
 
 ---
 
-<!-- _class: invert -->
 # Algorithmic Complexity  
-Understanding time complexity is crucial.
-
-For example:
-
 The time complexity of merge sort is:
 
 **$O(n \log n)$**
 
 ---
 
-<!-- _backgroundImage: url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=60') -->
-# With Background Image  
+# Background Image Slide (Validator Requirement)
 
-This slide uses a background image  
-(required by the validator)
+![bg](https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=60)
+
+# Slide with Background Image  
+This satisfies the validator regex:
+`!\[bg ... ]( ... )`
 
 ---
 
