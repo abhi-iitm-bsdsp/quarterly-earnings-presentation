@@ -45,12 +45,10 @@ sns.countplot(data=df, x='department', palette="Set2")
 plt.title(f"Employee Count by Department ({email})", fontsize=16)
 plt.xlabel("Department")
 plt.ylabel("Number of Employees")
-
-# Save plot as PNG
 plt.savefig("department_histogram.png", dpi=64, bbox_inches='tight')
 plt.show()
 
-# --- Save HTML including Python code ---
+# --- Save HTML including Python code and output ---
 html_content = f"""
 <html>
 <head><title>Employee Department Histogram</title></head>
@@ -59,6 +57,10 @@ html_content = f"""
 <pre>
 {open(__file__).read()}
 </pre>
+
+<h3>Output:</h3>
+<p>Number of employees in Finance Department: {finance_count}</p>
+
 <h3>Generated Histogram:</h3>
 <img src="department_histogram.png" alt="Department Histogram">
 </body>
@@ -68,9 +70,13 @@ html_content = f"""
 with open("employee_department_histogram.html", "w") as f:
     f.write(html_content)
 
-print("HTML file with Python code and plot saved.")
+print("HTML file with Python code, output, and plot saved.")
 
 </pre>
+
+<h3>Output:</h3>
+<p>Number of employees in Finance Department: 11</p>
+
 <h3>Generated Histogram:</h3>
 <img src="department_histogram.png" alt="Department Histogram">
 </body>
