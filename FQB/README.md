@@ -2,6 +2,7 @@
 
 **Author:** 23f1001785@ds.study.iitm.ac.in  
 **Business Case:** Executive team requires insights on inventory turnover ratio to optimize supply chain and demand forecasting.
+
 ## LLM Assistance
 
 This analysis and visualization were generated with the assistance of Jules (ChatGPT Codex): https://chatgpt.com/codex/tasks
