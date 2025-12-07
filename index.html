@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js</title>
+
+  <!-- Reveal.js from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/theme/sky.css" id="theme">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+
+  <style>
+    /* small custom styling */
+    .email {font-size:0.9rem; opacity:0.85}
+    .note-box {background:#f7f7f7;border-left:4px solid #4a90e2;padding:8px;border-radius:4px}
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide (HTML) -->
+      <section>
+        <h1>Quarterly Earnings Report — Q4</h1>
+        <p class="email">Contact: <a href="mailto:23f1001785@ds.study.iitm.ac.in">23f1001785@ds.study.iitm.ac.in</a></p>
+        <p>Interactive Reveal.js presentation demo</p>
+        <aside class="notes">Introduce yourself, state objectives of the presentation: revenue, margin, key highlights.</aside>
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown>
+        <script type="text/template">
+
+## Executive Summary
+
+- Revenue grew by **12%** QoQ.
+- Gross margin improved due to cost controls.
+- Key initiatives: _automation_, _pricing optimization_.
+
+*Use fragments below to reveal bullets step-by-step.*
+
+        </script>
+        <aside class="notes">Walk through these bullets. Use the fragments on the next slide for animated reveals.</aside>
+      </section>
+
+      <!-- Slide with fragments (animated elements) -->
+      <section>
+        <h2>Highlights (animated)</h2>
+        <ul>
+          <li class="fragment">Revenue: Rs. <strong>120M</strong></li>
+          <li class="fragment">Costs down by <strong>3%</strong></li>
+          <li class="fragment">New leads up <strong>18%</strong></li>
+        </ul>
+        <aside class="notes">Reveal each fragment while narrating the impact on KPIs.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Example: Data extraction (Python)</h2>
+        <pre><code class="language-python"># load data
+import pandas as pd
+
+df = pd.read_csv('earnings.csv')
+# compute QoQ growth
+df['qoq_growth'] = df['revenue'].pct_change() * 100
+print(df.head())</code></pre>
+        <aside class="notes">Explain ETL, data checks and where this lives in the pipeline.</aside>
+      </section>
+
+      <!-- Math slide: financial formula -->
+      <section>
+        <h2>Financial Formula</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>\(\displaystyle \text{NPV} = \sum_{t=0}^{T} \dfrac{C_t}{(1+r)^t} \)</p>
+        <p>Where \(C_t\) are cash flows and \(r\) is discount rate.</p>
+        <aside class="notes">Show a short worked example and relate discount rate to WACC.</aside>
+      </section>
+
+      <!-- Slide with supporting chart placeholder -->
+      <section>
+        <h2>Revenue Trend</h2>
+        <div class="note-box fragment">(Embed chart here — use Chart.js or static image)</div>
+        <aside class="notes">Discuss seasonality and channel splits. Replace placeholder with a chart image or Chart.js canvas.</aside>
+      </section>
+
+      <!-- Closing slide -->
+      <section>
+        <h2>Questions & Next Steps</h2>
+        <p>Contact: <a href="mailto:23f1001785@ds.study.iitm.ac.in">23f1001785@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">Ask for feedback, list immediate action items and owners.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://unpkg.com/reveal.js@4.4.0/dist/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+      markdown: {
+        smartypants: true
+      }
+    });
+
+    // Initialize highlight.js
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+
+  <!-- Reveal.js plugin scripts (via CDN) -->
+  <script src="https://unpkg.com/reveal.js@4.4.0/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.4.0/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.4.0/plugin/notes/notes.js"></script>
+
+</body>
+</html>
