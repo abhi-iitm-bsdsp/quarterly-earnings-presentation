@@ -1,133 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarterly Earnings — Interactive Reveal.js</title>
+    <meta charset="utf-8" />
+    <title>Quarterly Earnings Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Reveal.js from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/theme/sky.css" id="theme">
+    <!-- RevealJS Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css" id="theme">
 
-  <!-- Highlight.js for code highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <!-- Code Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
-  <!-- KaTeX for math rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
-
-  <style>
-    /* small custom styling */
-    .email {font-size:0.9rem; opacity:0.85}
-    .note-box {background:#f7f7f7;border-left:4px solid #4a90e2;padding:8px;border-radius:4px}
-  </style>
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
 </head>
+
 <body>
-  <div class="reveal">
+<div class="reveal">
     <div class="slides">
 
-      <!-- Title slide (HTML) -->
-      <section>
-        <h1>Quarterly Earnings Report — Q4</h1>
-        <p class="email">Contact: <a href="mailto:23f1001785@ds.study.iitm.ac.in">23f1001785@ds.study.iitm.ac.in</a></p>
-        <p>Interactive Reveal.js presentation demo</p>
-        <aside class="notes">Introduce yourself, state objectives of the presentation: revenue, margin, key highlights.</aside>
-      </section>
+        <!-- Slide 1 – Title (Markdown) -->
+        <section data-markdown>
+            <textarea data-template>
+# 📊 Quarterly Earnings Presentation
+### Prepared by: **23f1001785@ds.study.iitm.ac.in**
 
-      <!-- Markdown slide -->
-      <section data-markdown>
-        <script type="text/template">
+---
 
-## Executive Summary
+**Welcome to the interactive RevealJS-based presentation**
+            </textarea>
+        </section>
 
-- Revenue grew by **12%** QoQ.
-- Gross margin improved due to cost controls.
-- Key initiatives: _automation_, _pricing optimization_.
+        <!-- Slide 2 – Fragment Animation -->
+        <section>
+            <h2>Earnings Highlights</h2>
+            <ul>
+                <li class="fragment">Revenue increased by 18%</li>
+                <li class="fragment">Operating margin improved</li>
+                <li class="fragment">Customer base grew by 12%</li>
+                <li class="fragment">New investments in AI infrastructure</li>
+            </ul>
 
-*Use fragments below to reveal bullets step-by-step.*
+            <aside class="notes">
+                Talk through each bullet as it appears.  
+                Emphasize growth and strategic investments.
+            </aside>
+        </section>
 
-        </script>
-        <aside class="notes">Walk through these bullets. Use the fragments on the next slide for animated reveals.</aside>
-      </section>
+        <!-- Slide 3 – Code Highlight -->
+        <section>
+            <h2>Sample Code Analysis</h2>
+            <pre><code class="language-python">
+def calculate_growth(prev, curr):
+    return ((curr - prev) / prev) * 100
 
-      <!-- Slide with fragments (animated elements) -->
-      <section>
-        <h2>Highlights (animated)</h2>
-        <ul>
-          <li class="fragment">Revenue: Rs. <strong>120M</strong></li>
-          <li class="fragment">Costs down by <strong>3%</strong></li>
-          <li class="fragment">New leads up <strong>18%</strong></li>
-        </ul>
-        <aside class="notes">Reveal each fragment while narrating the impact on KPIs.</aside>
-      </section>
+print(calculate_growth(100, 118))  # Output: 18%
+            </code></pre>
 
-      <!-- Code sample with syntax highlighting -->
-      <section>
-        <h2>Example: Data extraction (Python)</h2>
-        <pre><code class="language-python"># load data
-import pandas as pd
+            <aside class="notes">
+                Demonstrate use of Python for financial analytics.
+            </aside>
+        </section>
 
-df = pd.read_csv('earnings.csv')
-# compute QoQ growth
-df['qoq_growth'] = df['revenue'].pct_change() * 100
-print(df.head())</code></pre>
-        <aside class="notes">Explain ETL, data checks and where this lives in the pipeline.</aside>
-      </section>
+        <!-- Slide 4 – Math Formula -->
+        <section>
+            <h2>Financial Model Equation</h2>
+            <p>
+                Quarterly revenue forecast:
+            </p>
 
-      <!-- Math slide: financial formula -->
-      <section>
-        <h2>Financial Formula</h2>
-        <p>Net Present Value (NPV):</p>
-        <p>\(\displaystyle \text{NPV} = \sum_{t=0}^{T} \dfrac{C_t}{(1+r)^t} \)</p>
-        <p>Where \(C_t\) are cash flows and \(r\) is discount rate.</p>
-        <aside class="notes">Show a short worked example and relate discount rate to WACC.</aside>
-      </section>
+            <p>
+                $$ R(t) = R_0 \cdot e^{kt} $$
+            </p>
 
-      <!-- Slide with supporting chart placeholder -->
-      <section>
-        <h2>Revenue Trend</h2>
-        <div class="note-box fragment">(Embed chart here — use Chart.js or static image)</div>
-        <aside class="notes">Discuss seasonality and channel splits. Replace placeholder with a chart image or Chart.js canvas.</aside>
-      </section>
+            <p class="fragment">Where \( k \) is the growth constant.</p>
 
-      <!-- Closing slide -->
-      <section>
-        <h2>Questions & Next Steps</h2>
-        <p>Contact: <a href="mailto:23f1001785@ds.study.iitm.ac.in">23f1001785@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">Ask for feedback, list immediate action items and owners.</aside>
-      </section>
+            <aside class="notes">
+                Explain exponential revenue growth using KaTeX.
+            </aside>
+        </section>
+
+        <!-- Slide 5 – Final -->
+        <section data-markdown>
+<textarea data-template>
+# 🎉 Thank You!
+
+**Visit GitHub Pages to view this presentation online.**
+
+*Add ?v=1, ?v=2 etc. to refresh cache.*
+
+---
+Repository:  
+https://github.com/abhi-iitm-bsdsp/quarterly-earnings-presentation/
+</textarea>
+        </section>
 
     </div>
-  </div>
+</div>
 
-  <!-- Reveal.js and plugins -->
-  <script src="https://unpkg.com/reveal.js@4.4.0/dist/reveal.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- RevealJS Core JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
 
-  <script>
-    // Initialize Reveal
+<!-- Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+
+<!-- KaTeX Auto-Render -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+
+<script>
+    // Initialize RevealJS
     Reveal.initialize({
-      hash: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-      markdown: {
-        smartypants: true
-      }
+        hash: true,
+        slideNumber: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
     });
-    Reveal.sync();
 
-    // Initialize highlight.js
-    document.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('pre code').forEach((el) => {
-        hljs.highlightElement(el);
-      });
+    // Render KaTeX math
+    renderMathInElement(document.body, {
+        delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "\\(", right: "\\)", display: false }
+        ]
     });
-  </script>
-
-  <!-- Reveal.js plugin scripts (via CDN) -->
-  <script src="https://unpkg.com/reveal.js@4.4.0/plugin/markdown/markdown.js"></script>
-  <script src="https://unpkg.com/reveal.js@4.4.0/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js@4.4.0/plugin/notes/notes.js"></script>
+</script>
 
 </body>
 </html>
