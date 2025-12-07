@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Dec  7 23:11:48 2025
+
+@author: Abhishek Seth
+"""
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -27,6 +33,5 @@ plt.xlabel("Hour of Day")
 plt.ylabel("Day of Week")
 
 # Save the chart (EXACT 512x512)
-plt.savefig("chart.png", dpi=64, bbox_inches="tight")
+plt.savefig("chart.png", dpi=64)
 plt.close()
-
