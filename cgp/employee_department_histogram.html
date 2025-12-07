@@ -1,83 +1,45 @@
 
+<!DOCTYPE html>
 <html>
-<head><title>Employee Department Histogram</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Department Histogram</title>
+</head>
 <body>
-<h3>Python Code Used (23f1001785@ds.study.iitm.ac.in)</h3>
-<pre>
-# employee_visualization.py
+<h2>Employee Performance Analysis</h2>
+<p>Email: 23f1001785@ds.study.iitm.ac.in</p>
+
+<h3>Python Code</h3>
+<pre><code>
+# Email: 23f1001785@ds.study.iitm.ac.in
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Email for validation
-email = "23f1001785@ds.study.iitm.ac.in"
+# Dataset
+data = {'employee_id': ['EMP001', 'EMP002', 'EMP003', 'EMP004', 'EMP005'], 'department': ['R&D', 'HR', 'HR', 'Finance', 'Operations'], 'region': ['Middle East', 'Europe', 'Asia Pacific', 'North America', 'Asia Pacific'], 'performance_score': [83.91, 76.85, 76.48, 74.44, 66.71], 'years_experience': [5, 11, 15, 8, 14], 'satisfaction_rating': [4, 4.6, 4.5, 3.1, 4.4]}
 
-# --- Generate synthetic dataset ---
-np.random.seed(42)
-departments = ['R&D', 'HR', 'Finance', 'Operations', 'Marketing', 'Sales', 'IT']
-regions = ['North America', 'Europe', 'Asia Pacific', 'Middle East', 'South America']
+df = pd.DataFrame(data)
 
-employee_ids = [f"EMP{i:03d}" for i in range(1, 101)]
-department_choices = np.random.choice(departments, size=100)
-region_choices = np.random.choice(regions, size=100)
-performance_scores = np.round(np.random.normal(loc=75, scale=10, size=100), 2)
-years_experience = np.random.randint(1, 21, size=100)
-satisfaction_ratings = np.round(np.random.uniform(3.0, 5.0, size=100), 1)
+# Count Finance employees
+finance_count = df[df['department']=="Finance"].shape[0]
+print("Number of employees in Finance Department:", finance_count)
 
-df = pd.DataFrame({
-    "employee_id": employee_ids,
-    "department": department_choices,
-    "region": region_choices,
-    "performance_score": performance_scores,
-    "years_experience": years_experience,
-    "satisfaction_rating": satisfaction_ratings
-})
-
-# --- Frequency count for Finance ---
-finance_count = df[df['department'] == 'Finance'].shape[0]
-print(f"Number of employees in Finance Department: {finance_count}")
-
-# --- Seaborn Histogram ---
+# Histogram
 sns.set_style("whitegrid")
-plt.figure(figsize=(8,8))  # 512x512 px
+plt.figure(figsize=(8,8))
 sns.countplot(data=df, x='department', palette="Set2")
-plt.title(f"Employee Count by Department ({email})", fontsize=16)
+plt.title("Employee Count by Department")
 plt.xlabel("Department")
 plt.ylabel("Number of Employees")
 plt.savefig("department_histogram.png", dpi=64, bbox_inches='tight')
 plt.show()
+</code></pre>
 
-# --- Save HTML including Python code and output ---
-html_content = f"""
-<html>
-<head><title>Employee Department Histogram</title></head>
-<body>
-<h3>Python Code Used ({email})</h3>
-<pre>
-{open(__file__).read()}
-</pre>
+<h3>Output</h3>
+<p>Number of employees in Finance Department: 1</p>
 
-<h3>Output:</h3>
-<p>Number of employees in Finance Department: {finance_count}</p>
-
-<h3>Generated Histogram:</h3>
-<img src="department_histogram.png" alt="Department Histogram">
-</body>
-</html>
-"""
-
-with open("employee_department_histogram.html", "w") as f:
-    f.write(html_content)
-
-print("HTML file with Python code, output, and plot saved.")
-
-</pre>
-
-<h3>Output:</h3>
-<p>Number of employees in Finance Department: 11</p>
-
-<h3>Generated Histogram:</h3>
+<h3>Histogram Visualization</h3>
 <img src="department_histogram.png" alt="Department Histogram">
 </body>
 </html>
